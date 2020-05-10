@@ -1,0 +1,211 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --green:#06c167;
+    --gray:#ddd;
+    --lightgray:rgb(84, 84, 84);
+}
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    margin:0;
+}
+
+.container {
+    width: calc(100% - 120px);
+    margin:auto
+}
+
+.smallText {
+    font-size: .8rem;
+}
+
+header {
+    .logo {
+        h1 {
+            font-weight: 600;
+            span {
+                color:var(--green);
+                font-weight: 700;
+            }
+        }
+    }
+    
+    .container {
+         display:flex;
+         align-items: center;
+     }
+
+    .searchBar {
+         margin-left:auto;
+     }
+
+    .header-options {
+         padding-left: 3rem;
+         display:  flex;
+         align-items: center;
+         svg {
+             margin-right: 10px;
+         }
+     }
+    .details , 
+    .searchBar {
+          display: flex;
+     }
+}
+
+.options {
+    padding:1.2rem 0 ;
+    .options-btn {
+        display: inline-flex;
+        align-items: center;
+        background:--grey;
+        padding:0.5rem 1.2rem ;
+        border-radius: 30px;
+        border:0;
+        margin-right: 5px;
+        font-size: .9rem;
+        letter-spacing: 0.6px;
+        transition:all 0.2s ease-in-out;
+        cursor: pointer;
+        &.selected {
+            background:black;
+            color:#fff;
+        }
+        &:hover {
+            
+            background:black;
+            color:#fff;
+        }
+        svg {
+            max-width: 16px;
+            margin-right: .5rem ;
+        }
+    }
+}   
+
+.listings {
+    padding:2rem 0;
+    .header {
+        display: flex;
+        align-items: center;
+        .header-title {
+            h2 {
+                font-weight: 600;
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+                margin-top:0;
+            }
+            span {
+                color:var(--lightgray);
+            }
+        }
+        
+        .header-viewOptions {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            margin:auto 0 auto auto;
+            .viewAll {
+                color:var(--green);
+                font-weight: 600;
+                padding:0 1rem;
+            }
+            .viewMore {
+                .arrow {
+                    
+                    opacity: 0.3;
+                    transition:all 0.2s ease-in-out;
+                    cursor:pointer;
+                    &.darker,
+                    &:hover {
+                        opacity:1;
+                    }
+
+                }
+
+            }
+        }
+    }
+    .circle {
+        width: 40px;
+        height:40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--gray);
+    }
+    .listings-grid {
+        display: flex;
+        overflow: hidden;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+        .listings-col {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: 100%;
+            scroll-snap-align: start;
+            margin-left: 40px;
+        }
+        .listings-grid-element {
+            width:31%;
+            margin-top:2rem;
+            
+            .image {
+                height:200px;
+                overflow: hidden;
+                img {
+                    width:100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .text-lower {
+                padding:.6rem 0; 
+              span  {
+                    color:var(--lightgray);
+                }
+            }
+            .text {
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid var(--gray);
+                padding: 1rem 0;
+                h3 {
+                    margin-bottom:0.1rem;
+                    font-size: 1.2rem;
+                    margin-top:0;
+                }
+                span {
+                    font-size: .9rem;
+
+                }
+                .rating {
+                    margin:auto 0 auto auto;
+                    height:100%;
+                    span {
+                      color:#000;
+                      font-size: 1rem;
+                    }
+                }
+            }
+
+        }
+    }
+}
